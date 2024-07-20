@@ -1,0 +1,15 @@
+{% extends 'home/index.html' %}
+
+{% block title %}
+ Login | Webcapz E-commerce Application
+{% endblock %}
+
+{% block main %}
+<h2>Login</h2><br><br>
+    <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }} <br>
+    <input type="submit" value="Login">
+    </form><br><br>
+    <p><a href="{% url 'password_reset' %}" style="color: blue;text-decoration: underline;">Forgot Password?</a></p>
+{% endblock %}

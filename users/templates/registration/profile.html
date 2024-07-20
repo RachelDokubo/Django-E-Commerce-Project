@@ -1,0 +1,15 @@
+{% extends 'home/index2.html' %}
+
+{% block main %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Update">
+    </form>
+
+{% endblock %}
+
+{% block title %}
+Webcapz | Profile
+{% endblock %}

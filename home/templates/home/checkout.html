@@ -1,0 +1,35 @@
+{% extends "home/index2.html" %}
+{% block main %}
+
+<div>
+    <h2>CHECKOUT</h2>
+</div><br>
+<div>
+    <article>
+        <table>
+            <thead><td>Name</td><td>Quantity</td><td>Price</td></thead>
+            {% for item in products %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td>{{ total_price }}</td>
+            </tr>
+        </table>
+    </article>
+</div>
+
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="place an order">
+    </form>
+</div>
+{% endblock %}

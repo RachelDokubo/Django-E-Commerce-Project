@@ -1,0 +1,12 @@
+{% extends 'home/index.html' %}
+{% block title %}
+Webcapz | Add Product
+{% endblock %}
+{% block main %}
+<h1>Add Product</hn1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ forms.as_p}}
+    <input type="submit" value="Add Product">
+</form>
+{% endblock %}

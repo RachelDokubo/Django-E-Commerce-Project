@@ -1,0 +1,123 @@
+*{
+    background-color:  plum;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style-type: none;
+}
+header{
+    width: 100%;
+    background-color:beige;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+nav{
+    width: 90%;
+    margin: auto;
+    background-color: lightpink;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: 13%;
+    background-color: beige;
+    display: flex;
+    align-items: center;
+}
+.navcon{
+    width: 35%;
+    background-color: cornflowerblue;
+    display: flex;
+}
+.navcon li{
+    width: 25%;
+    background-color: beige;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+.navcon2{
+    width: 19%;
+    background-color: thistle;
+    display: flex;
+}
+.navcon2 li{
+    width: 50%;
+    background-color: beige;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+.sectionwrapper{
+    width: 100%;
+    background-color: pink;
+}
+.sectionparent{
+    width: 90%;
+    background-color: lightpink;
+    margin: auto;
+    display: flex;
+}
+.section1{
+    width: 40%;
+    background-color: beige;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    margin: 1%;
+    padding-left: 2%;
+}
+.shop{
+    font-size: 45px;
+    background-color: pink;
+    color: darkslategrey;
+}
+.shop1{
+    font-size: 15px;
+    background-color: beige;
+}
+.more{
+    background-color: grey;
+    width: 60px;
+    cursor: pointer white;
+}
+.section2{
+    width: 60%;
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    margin: 1%;
+}
+.sectionwrapper1{
+    width: 100%;
+    background-color: azure;
+}
+.sectionparent1{
+    width: 90%;
+    background-color: aliceblue;
+    margin: auto;
+    display: flex;
+}
+.list{
+    background-color: darkgray;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list li{
+    background-color: bisque;
+    margin: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}

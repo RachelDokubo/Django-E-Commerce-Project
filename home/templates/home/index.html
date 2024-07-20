@@ -1,0 +1,78 @@
+{% load static %}
+{{ data }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>{% block title %}WEBCAPZ{% endblock %}</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">WEBCAPZ</div>
+            <ul class="navcon">
+                <li><a href="{% url 'home_page' %}">Home Page</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href=""></a>Services</li>
+                <li><a href="{% url 'form' %}">Add Product</a></li>
+            </ul>
+            <ul class="navcon2">
+                {% if user.is_authenticated %}
+                
+                <li>
+                    <form action="{% url 'logout' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="submit" value="Logout">
+                    </form>
+                </li>
+                <li>{{ user.username }}</li>
+                {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                
+                <li><a href="{% url 'signup'%}">SignUp</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="sectionwrapper">
+            <article class="sectionparent">
+                <div class="section1">
+                    <h1 class="shop">
+                        SHOP COMPUTER <br>
+                        & ACCESSORIES
+                    </h1><br>
+                    <P class="shop1">
+                        Shop laptops, desktops, tablets, monitors,<br> harddrive, 
+                        phones, headsets, accessories and more 
+                    </P><br>
+                    <button class="more">More</button>
+                </div>
+                <div class="section2">
+                    <img src="" alt="">
+                </div>
+            </article>
+        </section>
+        {% block main %}
+            {% for d in object %}
+            <section class="sectionwrapper1">
+                <article class="sectionparent1">
+                    <div class="data">
+                        <ul class="list">
+                            <li><a href="{% url 'detail' d.id %}"><img src="{{ d.image.url }}" height="50px" width="50px"></a></li>
+                            <li>{{d.name}}</li>
+                            <li>{{d.price}}</li>
+                        </ul>
+                        <button class="button">Add to Cart</button>
+                    </div>
+                </article>
+            </section>    
+            {% endfor %}
+        {% endblock%}
+    </main>
+    <!-- <script type="text/javascript" src="{% static 'js/script.js' %}"></script> -->
+</body>
+</html>

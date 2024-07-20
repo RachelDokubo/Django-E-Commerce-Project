@@ -1,0 +1,17 @@
+{% extends 'home/index2.html' %}
+
+{% block main %}
+<h1>Contact US</h1><br><br>
+<p>
+    Get to know us and send us a message!
+</p><br><br><br>
+<form method="POST">
+    {% csrf_token %}
+    {{ contact_form.as_p}} <br><br>
+    <input type="submit" value="Send">
+</form>
+{% endblock %}
+
+{% block title %}
+Webcapz | Contact Us
+{% endblock %}

@@ -1,0 +1,19 @@
+    {% extends "home/index2.html"%}
+    {% block title %} {{ product.name }} {% endblock %}
+    {% block main %}
+
+    <div>
+        <img src="{{ product.image.url }}" alt="Product" height="350px" width="200px"><br>
+        <p>Price: {{ product.price }}</p><br>
+        <p>{{ product.description }}</p><br><br>
+        <p>
+            <a class="btn btn-outline-dark mt-auto" href="{% url 'add_to_cart' product.id %}">
+                Add to Cart
+
+            </a>
+                <!-- <form class="btn btn-outline-dark mt-auto" action="{% url 'add_to_cart' product.id %}">
+                    <input class="btn" type="submit" value="Add to Cart">
+                </form> -->
+        </p>
+    </div>
+    {% endblock %}

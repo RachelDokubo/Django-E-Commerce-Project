@@ -1,0 +1,39 @@
+{% extends 'home/index2.html' %}
+{% block main %}
+{% for item in cart_items %}
+
+
+<div>
+    <div class="col mb-5">
+        <div class="card h-100">
+            <!-- Product image-->
+            <img class="card-img-top" src="{{ item.product.image.url }}" alt="..." />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <p>{{ item.product.name }}</p>
+                    <!-- Product price-->
+                    <p>Unit Price: {{ item.product.price }}</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <p>Unit Price: {{ item.price }}</p>
+                </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center">
+                    <a class="btn btn-outline-dark mt-auto" href="{% url 'remove_from_cart' item.id %}">
+                        Remove from Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+   
+
+{% endfor %}
+
+<div>
+    <h4>Total Price: N{{ total_price }}</h4>
+    <a class="text-center text-black" href="{% url 'checkout' %}">Checkout</a>
+</div>
+{% endblock %}
